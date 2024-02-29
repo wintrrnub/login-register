@@ -1,9 +1,10 @@
 import axios from 'axios';
 import { useState } from "react";
 import useAuth from '../hooks/useAuth';
-import { Link } from 'react-router-dom'; // เพิ่ม import Link
+import { Link,useNavigate } from 'react-router-dom'; // เพิ่ม import Link
 
 export default function LoginForm() {
+  const Navigate = useNavigate();
   const { setUser } = useAuth();
   const [input, setInput] = useState({
     username: '',
@@ -30,6 +31,7 @@ export default function LoginForm() {
       });
       console.log(rs1.data);
       setUser(rs1.data);
+      Navigate("/Home");
     } catch (err) {
       console.log(err.message);
     }
