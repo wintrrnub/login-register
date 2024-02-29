@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
-import { IoTriangle, IoPerson, IoPersonOutline } from "react-icons/io5";
+import { IoTriangle, IoPerson} from "react-icons/io5";
 import { HiMiniShoppingCart } from "react-icons/hi2";
 
 const guestNav = [
@@ -46,12 +46,12 @@ export default function Header() {
         {user ? (
           <>
             <li>
-              <Link to="#" onClick={hdlLogout}><IoPersonOutline />Logout</Link>
+              <Link to="#" onClick={hdlLogout}><IoPerson />Logout</Link>
             </li>
           </>
         ) : (
           <li>
-            <Link to="/login"><IoPersonOutline />{guestNav[0].text}</Link>
+            <Link to="/login"><IoPerson />{guestNav[0].text}</Link>
           </li>
         )}
       </ul>
