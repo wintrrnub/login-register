@@ -17,10 +17,11 @@ const guestRouter = createBrowserRouter([
     </>,
     children: [
       { index: true, element: <Home /> },
+      { path: '/Home', element: <Home />},
       { path: '/register', element: <RegisterForm />},
       { path: '/login', element: <LoginForm />},
       { path: '/alert', element: <Alert />},
-      { path: '/contact', element: <Contacts />}
+      { path: '/contact', element: <Contacts />},
     ]
   }
 ])
@@ -33,7 +34,10 @@ const userRouter = createBrowserRouter([
       <Outlet />
     </>,
     children : [
-      { index: true, element: <UserHome /> }
+      { index: true, element: <Home /> },
+      { path: '/Home', element: <Home />},
+      { path: '/alert', element: <Alert />},
+      { path: '/contact', element: <Contacts />},
     ]
   }
 ])
